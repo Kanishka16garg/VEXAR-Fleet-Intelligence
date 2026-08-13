@@ -2,6 +2,8 @@
 
 > An explainable fleet intelligence system that analyzes driver behaviour and vehicle telemetry to surface fleet-relative operational signals.
 
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Open_Dashboard-00FFFF?style=for-the-badge&logo=vercel&logoColor=black)](https://vexar-fleet-intelligence.vercel.app/)
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2-navy)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.5-orange)
@@ -11,7 +13,7 @@
 
 ## Live Demo
 
-Deployment URL will be added after Vercel deployment.
+🚀 **Production Dashboard**: [https://vexar-fleet-intelligence.vercel.app/](https://vexar-fleet-intelligence.vercel.app/)
 
 ## Local Development
 
@@ -19,6 +21,7 @@ Deployment URL will be added after Vercel deployment.
 npm install
 npm run dev
 ```
+
 
 Fleet operations generate large amounts of trip and telemetry data, but raw sensor readings are difficult to translate into operational decisions.
 
