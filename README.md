@@ -98,7 +98,7 @@ flowchart LR
 
 - **Speed Features**: Speed variability (std) and upper-tail speed (95th percentile).
 - **Accelerometer Features**: Dynamic acceleration deviation from nominal Earth gravity baseline ($1.0086\text{g}$):
-  $$||A_{\text{grav\_dev}}|| = | \sqrt{A_x^2 + A_y^2 + A_z^2} - 1.0086\text{g} |$$
+  $$\text{Accel Dev} = \left| \sqrt{A_x^2 + A_y^2 + A_z^2} - 1.0086\text{g} \right|$$
   *Subtracting nominal gravity isolates dynamic vehicle motion from static tilt.*
 - **Gyroscope Features**: 95th percentile rotational motion magnitude.
 - **Exposure Normalization**: Event rates normalized per driving hour and per 100 km to prevent longer trips from artificially skewing anomaly counts.
@@ -109,11 +109,11 @@ flowchart LR
 
 ### Driver Behaviour Score (0–100)
 Combines 6 fleet-relative percentiles ($P_{\text{fleet}}$):
-$$\text{Driver Score} = 0.20 P_{\text{speed\_std}} + 0.20 P_{\text{speed\_p95}} + 0.20 P_{\text{accel\_dev}} + 0.15 P_{\text{gyro\_p95}} + 0.15 P_{\text{accel\_rate}} + 0.10 P_{\text{persistence}}$$
+$$\text{Driver Score} = 0.20 P_{\text{speed-std}} + 0.20 P_{\text{speed-p95}} + 0.20 P_{\text{accel-dev}} + 0.15 P_{\text{gyro-p95}} + 0.15 P_{\text{accel-rate}} + 0.10 P_{\text{persistence}}$$
 
 ### Vehicle Inspection Score (0–100)
 Combines 5 fleet-relative percentiles ($P_{\text{fleet}}$):
-$$\text{Vehicle Score} = 0.30 P_{\text{accel\_vibr}} + 0.25 P_{\text{vibr\_rate}} + 0.25 P_{\text{gyro\_rot}} + 0.20 P_{\text{maint\_context}}$$
+$$\text{Vehicle Score} = 0.30 P_{\text{accel-vibr}} + 0.25 P_{\text{vibr-rate}} + 0.25 P_{\text{gyro-rot}} + 0.20 P_{\text{maint-context}}$$
 *Maintenance information (age, odometer, days since service) is treated strictly as contextual evidence ($20\%$). Sensor evidence remains primary ($80\%$).*
 
 ### Hybrid Intelligence Model
