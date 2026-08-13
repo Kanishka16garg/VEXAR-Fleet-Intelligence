@@ -9,7 +9,19 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)
 ![Vite](https://img.shields.io/badge/Vite-5.4-purple)
 
+## Live Demo
+
+Deployment URL will be added after Vercel deployment.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
 Fleet operations generate large amounts of trip and telemetry data, but raw sensor readings are difficult to translate into operational decisions.
+
 
 VEXAR Fleet Intelligence converts this telemetry into two explainable intelligence layers:
 - **Driver Behaviour Intelligence**: Surfaces unusual driver handling patterns for coaching.
