@@ -167,22 +167,23 @@ The React TypeScript web application features 5 interactive views:
 ## Key Results
 
 ### Driver Behaviour Intelligence (30 Drivers)
-- **Focused Coaching Review**: 2 drivers (`D24`, `D07`)
-- **Behavioral Coaching Review**: 10 drivers
-- **Routine Performance Monitoring**: 15 drivers
-- **Standard Monitoring / Low Evidence**: 3 drivers
+- **Focused Coaching Review**: 1 driver (`D24`)
+- **Behavioral Coaching Review**: 7 drivers
+- **Routine Performance Monitoring**: 7 drivers
+- **Standard Monitoring / Low Evidence**: 15 drivers
 
 ### Vehicle Health Inspection (30 Vehicles)
 - **Priority Mechanical / Suspension Inspection**: 4 vehicles (`V02`, `V19`, `V14`, `V23`)
-- **Routine Fleet Service Inspection**: 8 vehicles
-- **Routine Fleet Monitoring**: 14 vehicles
-- **Standard Monitoring / Insufficient Evidence**: 4 vehicles
+- **Routine Fleet Service Inspection**: 6 vehicles
+- **Routine Fleet Monitoring**: 7 vehicles
+- **Standard Monitoring / Insufficient Evidence**: 13 vehicles
 
 ### Operational Attribution (77 Candidate Trips)
 - **Driver-linked**: 3 trips
 - **Vehicle-linked**: 17 trips
 - **Joint co-occurrence**: 1 trip
 - **Insufficient evidence for attribution**: 56 trips (72.7%)
+
 
 ---
 
