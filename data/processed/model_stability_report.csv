@@ -1,0 +1,7 @@
+Audit_Metric,Value,Interpretation
+Driver Contamination Sensitivity (0.05 vs 0.10),1.0,High rank stability across contamination thresholds
+Driver Contamination Sensitivity (0.10 vs 0.15),1.0,High rank stability across contamination thresholds
+Vehicle Contamination Sensitivity (0.05 vs 0.10),1.0,High rank stability across contamination thresholds
+Vehicle Contamination Sensitivity (0.10 vs 0.15),1.0,High rank stability across contamination thresholds
+Driver Bootstrap Rank Stability (100 Iterations),0.8013,Strong bootstrap resampling stability
+Vehicle Bootstrap Rank Stability (100 Iterations),0.687,Strong bootstrap resampling stability

@@ -1,0 +1,29 @@
+# Vexar Fleet Intelligence - Data Validation Report
+
+| Category | Check Name | Violation Count | Total Evaluated | Violation Pct (%) | Status | Details |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| 1. Schema | Missing Required Columns | 0 | 4 | 0.0000% | **PASS** | Missing: Drivers=0, Vehicles=0, Trips=0, Telemetry=0 |
+| 2. Primary Keys | Driver_ID PK Duplicates | 0 | 30 | 0.0000% | **PASS** | 0 duplicate driver IDs |
+| 2. Primary Keys | Vehicle_ID PK Duplicates | 0 | 30 | 0.0000% | **PASS** | 0 duplicate vehicle IDs |
+| 2. Primary Keys | Trip_ID PK Duplicates | 0 | 450 | 0.0000% | **PASS** | 0 duplicate trip IDs |
+| 3. Telemetry Composite Key | Trip_ID + Timestamp Duplicates | 0 | 12987 | 0.0000% | **PASS** | 0 duplicate timestamp entries per trip |
+| 4. Missing Values | Total Missing Cell Count | 0 | 175611 | 0.0000% | **PASS** | Drivers=0, Vehicles=0, Trips=0, Telemetry=0 |
+| 5. Row Duplicates | Full Row Duplicates | 0 | 175611 | 0.0000% | **PASS** | Full row dups across all tables: 0 |
+| 6. Foreign Keys | Trips -> Drivers Foreign Key | 0 | 450 | 0.0000% | **PASS** | 0 unmapped Driver_IDs in Trips |
+| 6. Foreign Keys | Trips -> Vehicles Foreign Key | 0 | 450 | 0.0000% | **PASS** | 0 unmapped Vehicle_IDs in Trips |
+| 6. Foreign Keys | Telemetry -> Trips Foreign Key | 0 | 12987 | 0.0000% | **PASS** | 0 unmapped Trip_IDs in Telemetry |
+| 7. Context Consistency | Telemetry Driver_ID vs Trip Driver_ID | 0 | 12987 | 0.0000% | **PASS** | 0 telemetry rows mismatched Driver_ID |
+| 7. Context Consistency | Telemetry Vehicle_ID vs Trip Vehicle_ID | 0 | 12987 | 0.0000% | **PASS** | 0 telemetry rows mismatched Vehicle_ID |
+| 8. Timestamp Validation | Invalid/Unparsable Timestamps | 0 | 12987 | 0.0000% | **PASS** | 0 unparsable timestamps |
+| 8. Timestamp Validation | Telemetry Before Trip Start | 0 | 12987 | 0.0000% | **PASS** | 0 points recorded before trip start time |
+| 8. Timestamp Validation | Telemetry After Trip End | 0 | 12987 | 0.0000% | **PASS** | 0 points recorded after trip end time |
+| 8. Timestamp Validation | Telemetry Interval Gaps (>60s) | 0 | 12537 | 0.0000% | **PASS** | 0 intervals exceeding 60 seconds |
+| 9. Trip Logic | Non-positive Trip Duration | 0 | 450 | 0.0000% | **PASS** | 0 trips with duration <= 0 |
+| 9. Trip Logic | Non-positive Trip Distance | 0 | 450 | 0.0000% | **PASS** | 0 trips with distance <= 0 |
+| 9. Trip Logic | Max_Speed < Avg_Speed Inconsistency | 0 | 450 | 0.0000% | **PASS** | 0 trips with Max_Speed < Avg_Speed |
+| 10. GPS Coordinates | Latitude Out-of-Bounds [-90, 90] | 0 | 12987 | 0.0000% | **PASS** | 0 out-of-bounds latitude values |
+| 10. GPS Coordinates | Longitude Out-of-Bounds [-180, 180] | 0 | 12987 | 0.0000% | **PASS** | 0 out-of-bounds longitude values |
+| 11. Numerical Sanity | Negative Telemetry Speed (< 0 km/h) | 0 | 12987 | 0.0000% | **PASS** | 0 negative speed observations (INVALID) |
+| 11. Numerical Sanity | Implausible Telemetry Speed (> 150 km/h) | 0 | 12987 | 0.0000% | **PASS** | 0 speeds above 150 km/h (INVALID) |
+| 11. Numerical Sanity | Candidate Accel Tail (> P99 Gravity Dev) | 130 | 12987 | 1.0010% | **INFO / UNUSUAL** | 130 points in top 1% acceleration deviation tail (Preserved as candidate extreme, NOT invalid) |
+| 11. Numerical Sanity | Candidate Gyro Tail (> P99 Gyro Rate) | 130 | 12987 | 1.0010% | **INFO / UNUSUAL** | 130 points in top 1% rotational rate tail (Preserved as candidate extreme, NOT invalid) |

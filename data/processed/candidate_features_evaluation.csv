@@ -1,0 +1,12 @@
+Feature,Level,Source,Reason,Interpretability,Potential Issue,Action
+speed_mean,Trip,Telemetry Speed,Central tendency of trip operating velocity,High,Redundant with Trips.Avg_Speed_kmph (corr > 0.999),REJECT (Redundant)
+speed_max,Trip,Telemetry Speed,Peak instantaneous speed,Medium,Redundant with Trips.Max_Speed_kmph (corr > 0.999),REJECT (Redundant)
+speed_p95,Trip,Telemetry Speed,Captures sustained high operating speed tail without minute noise,High,None,KEEP
+speed_std,Trip,Telemetry Speed,Quantifies speed instability and stop-and-go driving pattern,High,Influenced by hub traffic density,KEEP
+accel_grav_dev_mean,Trip,3-Axis Accel Magnitude Deviation,Mean magnitude deviation from nominal baseline gravity (~1.0086g),High,"Scalar proxy, not full 3D vector decomposition",KEEP
+accel_extremes_per_hour,Trip,3-Axis Accel Magnitude Deviation,Exposure-normalized rate of candidate extreme acceleration deviations,Very High,Can reflect road surface irregularity or handling,KEEP
+gyro_mag_p95,Trip,3-Axis Gyroscope,Upper tail rotational velocity (cornering/swerving rate),High,None,KEEP
+gyro_extremes_per_hour,Trip,3-Axis Gyroscope,Exposure-normalized rate of candidate extreme rotational velocities,Very High,Can reflect steering slop or sharp turns,KEEP
+days_since_last_service,Vehicle,Vehicles Master Data,Maintenance recency operational signal,High,Static across 1-week window,INVESTIGATE
+vehicle_age_years,Vehicle,Vehicles Master Data,Vehicle structural aging indicator,High,Correlated with initial odometer,INVESTIGATE
+Distance_KM,Trip,Trips Master Data,Total trip spatial span,High,"Strong correlation with Duration_Min (r = 0.88), but distinct physical dimension",INVESTIGATE
